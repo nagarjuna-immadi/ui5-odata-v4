@@ -61,7 +61,7 @@
 					"autoExpandSelect": true,
 					"earlyRequests": true,
 					"operationMode": "Server",
-					"groupId": "$auto"
+					"groupId": "$direct"
 				}
 			}
 		}
