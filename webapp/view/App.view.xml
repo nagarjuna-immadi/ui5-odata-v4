@@ -176,22 +176,22 @@
 																<f:formElements>
 																	<f:FormElement label="{i18n>addressLabelText}">
 																		<f:fields>
-																			<Text text="{HomeAddress/Address}" />
+																			<!-- <Text text="{HomeAddress/Address}" /> -->
 																		</f:fields>
 																	</f:FormElement>
 																	<f:FormElement label="{i18n>cityLabelText}">
 																		<f:fields>
-																			<Text text="{HomeAddress/City/Name}" />
+																			<!-- <Text text="{HomeAddress/City/Name}" /> -->
 																		</f:fields>
 																	</f:FormElement>
 																	<f:FormElement label="{i18n>regionLabelText}">
 																		<f:fields>
-																			<Text text="{HomeAddress/City/Region}" />
+																			<!-- <Text text="{HomeAddress/City/Region}" /> -->
 																		</f:fields>
 																	</f:FormElement>
 																	<f:FormElement label="{i18n>countryLabelText}">
 																		<f:fields>
-																			<Text text="{HomeAddress/City/CountryRegion}" />
+																			<!-- <Text text="{HomeAddress/City/CountryRegion}" /> -->
 																		</f:fields>
 																	</f:FormElement>
 																</f:formElements>
