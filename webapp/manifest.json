@@ -38,8 +38,10 @@
 		"dependencies": {
 			"minUI5Version": "1.96.0",
 			"libs": {
+				"sap.f": {},
 				"sap.m": {},
-				"sap.ui.core": {}
+				"sap.ui.core": {},
+				"sap.ui.layout": {}
 			}
 		},
 		"handleValidation": true,
@@ -60,8 +62,7 @@
 				"settings": {
 					"autoExpandSelect": true,
 					"earlyRequests": true,
-					"operationMode": "Server",
-					"groupId": "$direct"
+					"operationMode": "Server"
 				}
 			}
 		}

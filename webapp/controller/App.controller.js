@@ -286,8 +286,22 @@ sap.ui.define([
 		_setDetailArea : function (oUserContext) {
 			var oDetailArea = this.byId("detailArea"),
 				oLayout = this.byId("defaultLayout"),
+				oOldContext,
 				oSearchField = this.byId("searchField");
 
+			if (!oDetailArea) {
+				return; // do nothing during view destruction
+			}
+
+			oOldContext = oDetailArea.getBindingContext();
+			if (oOldContext && !oOldContext.isTransient()) {
+				oOldContext.setKeepAlive(false);
+			}
+			if (oUserContext && !oUserContext.isTransient()) {
+				oUserContext.setKeepAlive(true,
+					// hide details if kept entity was refreshed but does not exist any more
+					this._setDetailArea.bind(this));
+			}
 			oDetailArea.setBindingContext(oUserContext || null);
 			// resize view
 			oDetailArea.setVisible(!!oUserContext);

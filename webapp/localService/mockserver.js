@@ -491,8 +491,7 @@ sap.ui.define([
 	/**
 	 * creates array of friends for a given user
 	 * @param  {string[]} aFriends array containing the usernames of the friends
-	 * @param  {string[]} aSubSelects array containing the select parameters for the expand on
-	 *     friends
+	 * @param  {string[]} aSubSelects array containing the select parameters for the expand on friends
 	 * @returns {Object[]} array containing the friends as objects
 	 */
 	function createFriendsArray(aFriends, aSubSelects) {
@@ -607,6 +606,7 @@ sap.ui.define([
 
 			sResponseBody = '{"@odata.context": "' + getBaseUrl(oXhr.url)
 				+ '$metadata#People/$entity",';
+			oUser.HomeAddress ??= null; // prevents drillDown errors
 			sResponseBody += JSON.stringify(oUser).slice(1);
 
 			// The response to POST requests is http 201 (Created)
@@ -800,8 +800,7 @@ sap.ui.define([
 			"Mockserver: Received " + oXhr.method + " request to URL " + oXhr.url,
 			(oXhr.requestBody ? "Request body is:\n" + oXhr.requestBody : "No request body.")
 			+ "\n",
-			sLogComponent
-		);
+			sLogComponent);
 
 		if (oXhr.method === "POST" && /\$batch/.test(oXhr.url)) {
 			aResponse = handleBatchRequest(oXhr);
@@ -816,7 +815,6 @@ sap.ui.define([
 			"Mockserver: Sent response with return code " + aResponse[0],
 			("Response headers: " + JSON.stringify(aResponse[1]) + "\n\nResponse body:\n"
 				+ aResponse[2]) + "\n",
-			sLogComponent
-		);
+			sLogComponent);
 	}
 });
